@@ -11,5 +11,5 @@ COMMIT_TYPE="$(cat "$COMMIT_MESSAGES" | fzf $FZF_OPTIONS)"
 
 
 # echo $COMMIT_TYPE
-message="[$COMMIT_TYPE] $@"
+message="$COMMIT_TYPE $@"
 git commit -m "$message"
