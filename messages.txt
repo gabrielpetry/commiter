@@ -1,0 +1,8 @@
+🚀 Feature
+🐛 Bugfix
+🔨 Refactor
+📚 Documentation
+🐳 Docker
+🖌️ Cosmetic
+🐎 Performance
+🎉 Initial Commit

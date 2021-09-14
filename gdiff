@@ -1,0 +1,17 @@
+#!/bin/bash
+FZF_OPTIONS="--height=10 --border --layout=reverse"
+
+if [[ -n "$1" ]]; then
+  selected="$(git status -s | grep -i "$@" | tail -n 1)"
+else
+  selected="$(git status -s | fzf $FZF_OPTIONS)"
+fi
+
+status="$(echo $selected | awk '{print $1}')"
+file="$(echo $selected | awk '{print $2}')"
+
+if [[ "$status" == "M" ]]; then
+  git diff "$file"
+else
+  git diff --no-index /dev/null "$file"
+fi

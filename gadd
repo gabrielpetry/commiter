@@ -1,0 +1,10 @@
+#!/bin/bash
+FZF_OPTIONS="--height=10 --border --layout=reverse --multi"
+selected="$(git status -s | fzf $FZF_OPTIONS | awk '{print $2}')"
+
+[[ -z "$selected" ]] && exit 0
+
+for i in $selected; do
+  echo "Adding $i"
+  git add "$i"
+done

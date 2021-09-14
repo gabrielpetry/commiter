@@ -1,0 +1,15 @@
+#!/bin/bash
+[[ -z "$1" ]] && echo "No message" && exit 1
+COMMIT_MESSAGES="$HOME/.config/commiter/messages.txt"
+FZF_OPTIONS="--height=10 --border --layout=reverse"
+
+/usr/bin/gadd
+
+test -f $COMMIT_MESSAGES || (mkdir -p $(dirname $COMMIT_MESSAGES) && touch $COMMIT_MESSAGES)
+
+COMMIT_TYPE="$(cat "$COMMIT_MESSAGES" | fzf $FZF_OPTIONS)"
+
+
+# echo $COMMIT_TYPE
+message="[$COMMIT_TYPE] $@"
+git commit -m "$message"
