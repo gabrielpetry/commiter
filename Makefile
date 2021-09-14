@@ -1,4 +1,4 @@
-messagem:
+config:
 	mkdir -p $HOME/.config/commiter
 	cp messages.txt $HOME/.config/commiter
 
