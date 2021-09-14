@@ -1,6 +1,6 @@
 config:
-	mkdir -p $HOME/.config/commiter
-	cp messages.txt $HOME/.config/commiter
+	mkdir -p $${HOME}/.config/commiter
+	cp -f messages.txt $${HOME}/.config/commiter
 
 install:
 	cp * /usr/bin/
