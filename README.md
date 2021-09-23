@@ -7,6 +7,8 @@ Yes, i'm lazy
 # What?
 This is a set of scripts that use fzf to simplify commiting
 
+Inspired by [https://committer.tk/](https://committer.tk/)
+
 # How to install?
 1. install fzf `sudo apt install fzf`
 1. clone this repo `git clone https://github.com/gabrielpetry/commiter`
