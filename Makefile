@@ -7,8 +7,10 @@ install:
 
 link:
 	unlink /usr/bin/gadd
-	unlink /usr/bin/gdiff
-	unlink /usr/bin/gcom
 	ln -s $(shell pwd)/gadd /usr/bin/
+	unlink /usr/bin/gdiff
 	ln -s $(shell pwd)/gdiff /usr/bin/
+	unlink /usr/bin/gcom
 	ln -s $(shell pwd)/gcom /usr/bin/
+	unlink /usr/bin/gbranch
+	ln -s $(shell pwd)/gbranch /usr/bin/

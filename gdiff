@@ -13,5 +13,5 @@ file="$(echo $selected | awk '{print $2}')"
 if [[ "$status" == "M" ]]; then
   git diff "$file"
 else
-  git diff --no-index /dev/null "$file"
+  git diff --no-index "/dev/null" "$file"
 fi

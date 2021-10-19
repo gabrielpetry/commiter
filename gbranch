@@ -1,0 +1,25 @@
+#!/bin/bash
+FZF_OPTIONS="--height=15 --border --layout=reverse"
+
+
+o=$1
+
+if [[ "$o" == "m" ]]; then
+    o="master"
+fi
+
+if [[ -n "$o" ]]; then
+  selected="$(git branch -l | sed 's/*//g' | awk '{print $1}' | grep -i "$o" | tail -n 1 )"
+else
+  selected="$(git branch -l | sed 's/*//g' | awk '{print $1}' | fzf $FZF_OPTIONS)"
+fi
+
+
+
+if [[ -z "$selected" ]]; then
+    echo "no branch selected"
+    exit 1
+fi
+
+git checkout "$selected"
+
